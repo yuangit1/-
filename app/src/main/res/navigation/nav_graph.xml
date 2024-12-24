@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.example.myapplication.FirstFragment"
+        android:label=""
+        tools:layout="@layout/fragment_first">
+
+
+        <action
+            android:id="@+id/write_note"
+            app:destination="@id/WriteFragment"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/WriteFragment"
+        android:name="com.example.myapplication.write_notes_Fragment"
+        tools:layout="@layout/write_notes_fragment">
+        <argument
+            android:name="content"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="topic"
+            app:argType="string"
+            android:defaultValue=""/>
+        <argument
+            android:name="filename"
+            app:argType="string"
+            android:defaultValue=""/>
+
+
+    </fragment>
+</navigation>
